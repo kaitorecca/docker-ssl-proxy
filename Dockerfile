@@ -8,7 +8,7 @@ ENV CLOUDFLARE_V6_SHA256 e7d84e6f9f8668279312a4ed836ce69cab1750d6745062c7e73d953
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends wget curl certbot pwgen \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends wget nano curl certbot pwgen \
     && echo "---> INSTALLING s6-overlay" \
     && wget https://github.com/just-containers/s6-overlay/releases/download/v1.17.0.0/s6-overlay-amd64.tar.gz \
     && echo $S6_OVERLAY_SHA256 s6-overlay-amd64.tar.gz | sha256sum -c \
